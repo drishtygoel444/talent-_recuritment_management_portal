@@ -2,13 +2,13 @@
 
 A full-stack web application for managing job postings, candidate applications, and recruitment workflows.
 
-## 🚀 Tech Stack
+## Tech Stack
 * **Backend:** Java 17, Spring Boot, Spring Data JPA
 * **Frontend:** HTML5, CSS3, JavaScript, Thymeleaf
 * **Database:** MySQL
 * **Build Tool:** Maven
 
-## 📋 Features
+## Features
 * **Job Posting Management:** Create, read, edit, and soft-delete/deactivate job postings.
 * **Candidate Management:** Register candidates and associate them with open jobs.
 * **Recruitment Status Tracking:** Track and transition candidates through stages (`APPLIED`, `SCREENING`, `INTERVIEW_SCHEDULED`, `OFFER_EXTENDED`, `HIRED`, `REJECTED`).
