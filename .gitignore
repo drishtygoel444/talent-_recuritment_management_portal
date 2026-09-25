@@ -1,0 +1,21 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### Spring Boot ###
+.mvn/
+mvnw
+mvnw.cmd
+
+### IDE ###
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+### Logs & DB ###
+*.log

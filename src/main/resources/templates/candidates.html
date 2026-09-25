@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidates</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <nav>
+        <h1>Talent Recruitment Portal</h1>
+        <ul>
+            <li><a th:href="@{/jobs}">Jobs</a></li>
+            <li><a th:href="@{/candidates}">Candidates</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Candidate Tracking</h2>
+        <a th:href="@{/candidates/new}" class="btn btn-primary" style="margin-bottom: 1rem;">Register Candidate</a>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Applied Job</th>
+                    <th>Current Status</th>
+                    <th>Update Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="candidate : ${candidates}">
+                    <td th:text="${candidate.fullName}">John Doe</td>
+                    <td th:text="${candidate.email}">john@example.com</td>
+                    <td th:text="${candidate.job != null ? candidate.job.title : 'N/A'}">Developer</td>
+                    <td th:text="${candidate.status}">APPLIED</td>
+                    <td>
+                        <form th:action="@{/candidates/{id}/status(id=${candidate.id})}" method="post" style="box-shadow:none; padding:0;">
+                            <select name="status" onchange="this.form.submit()">
+                                <option th:each="st : ${statuses}" 
+                                        th:value="${st}" 
+                                        th:text="${st}" 
+                                        th:selected="${st == candidate.status}"></option>
+                            </select>
+                        </form>
+                    </td>
+                    <td>
+                        <a th:href="@{/candidates/delete/{id}(id=${candidate.id})}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recruitment Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <nav>
+        <h1>Talent Recruitment Portal</h1>
+        <ul>
+            <li><a th:href="@{/jobs}">Jobs</a></li>
+            <li><a th:href="@{/candidates}">Candidates</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Welcome to the Recruitment Portal</h2>
+        <p>Manage job openings and candidate hiring workflows in one central dashboard.</p>
+        <div style="margin-top: 2rem;">
+            <a th:href="@{/jobs/new}" class="btn btn-primary">Post New Job</a>
+            <a th:href="@{/candidates/new}" class="btn btn-primary">Register Candidate</a>
+        </div>
+    </div>
+</body>
+</html>
